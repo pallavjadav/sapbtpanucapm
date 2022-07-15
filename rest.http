@@ -1,0 +1,45 @@
+###GET data
+GET http://localhost:4004/CatlogService/EmployeeSet/09a9faff-560a-43ee-9398-3b1a95c86d15
+
+
+###POST Data
+POST http://localhost:4004/CatlogService/EmployeeSet
+Content-Type: application/json
+
+{
+
+      "nameFirst": "juhi",
+      "nameMiddle": "pallav",
+      "nameLast": "jadav",
+      "nameInitials": "PJ",
+      "sex": "M",
+      "language": "E",
+      "phoneNumber": "+918141548716",
+      "email": "randy.gordon@itelo.info",
+      "loginName": "GORDONR",
+      "salaryAmount": 81463,
+      "Currency_code":"INR",
+      "accountNumber": "2233445566",
+      "bankId": "26005885",
+      "bankName": "My Bank of New York" 
+}
+
+###Update/PUT
+PUT http://localhost:4004/CatlogService/EmployeeSet/09a9faff-560a-43ee-9398-3b1a95c86d15
+Content-Type: application/json
+
+{
+    "salaryAmount":"1900",
+    "Currency_code":"INR"
+   
+}
+
+###Update/PATCH
+PATCH  http://localhost:4004/CatlogService/EmployeeSet/41ec1954-bcd6-4edb-a73c-317b8a1af0d8
+Content-Type: application/json
+
+{
+    "salaryAmount":"190000",
+    "Currency_code":"EUR"
+   
+}
