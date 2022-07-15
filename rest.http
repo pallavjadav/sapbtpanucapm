@@ -39,7 +39,7 @@ PATCH  http://localhost:4004/CatlogService/EmployeeSet/41ec1954-bcd6-4edb-a73c-3
 Content-Type: application/json
 
 {
-    "salaryAmount":"190000",
+    "salaryAmount":"19000",
     "Currency_code":"EUR"
    
 }
