@@ -43,3 +43,29 @@ Content-Type: application/json
     "Currency_code":"EUR"
    
 }
+
+###POST
+GET http://localhost:4004/getdatafromirpa
+
+
+###POST Data
+POST http://localhost:39907/mysrvdemo/InsertEmployeeSrv
+Content-Type: application/json
+
+{
+
+      "nameFirst": "juhi",
+      "nameMiddle": "pallav",
+      "nameLast": "jadav",
+      "nameInitials": "PJ",
+      "sex": "M",
+      "language": "E",
+      "phoneNumber": "+918141548716",
+      "email": "randy.gordon@itelo.info",
+      "loginName": "GORDONR",
+      "salaryAmount": 81463,
+      "Currency_code":"INR",
+      "accountNumber": "2233445566",
+      "bankId": "26005885",
+      "bankName": "My Bank of New York" 
+}
