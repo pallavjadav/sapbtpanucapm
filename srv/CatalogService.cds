@@ -19,7 +19,11 @@ service CatlogService @(path:'/CatlogService') {
     ) as projection on transaction.purchaseorder{
         *,
         Items: redirected to POItems
-    }
+    } actions {
+    action boost (ID: UUID);
+    function largestOrder() returns array of POs;
+
+  }
 
     entity POItems @(
         title:'{i18n>poItems}'

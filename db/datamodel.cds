@@ -31,7 +31,7 @@ context master {
             WEB_ADDRESS   : String(64) @title : 'Website';
             ADDRESS_GUID  : Association to address;
             BP_ID         : String(16);
-            COMPANY_NAME  : String(80);
+            COMPANY_NAME  : String(250);
     }
 
 
@@ -100,18 +100,17 @@ context master {
 
 context transaction {
 
-    entity purchaseorder : common.Amount {
-        key NODE_KEY         : Guid;
+    entity purchaseorder : common.Amount, cuid {
             PO_ID            : String(24);
             PARTNER_GUID     : Association to master.businesspartner;
             LIFECYCLE_STATUS : String(1);
             OVERALL_STATUS   : String(1);
             Items            : Association to many poitems
-                                   on Items.PARENT_KEY = $self
+                                   on Items.PARENT_KEY = $self;
+            NOTE             : String(256);
     }
 
-    entity poitems : common.Amount {
-        key NODE_KEY     : Guid;
+    entity poitems : common.Amount , cuid{
             PARENT_KEY   : Association to purchaseorder;
             PO_ITEM_POS  : Integer;
             PRODUCT_GUID : Association to master.product;

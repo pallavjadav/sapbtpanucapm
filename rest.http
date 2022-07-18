@@ -49,11 +49,11 @@ GET http://localhost:4004/getdatafromirpa
 
 
 ###POST Data
-POST http://localhost:39907/mysrvdemo/InsertEmployeeSrv
+POST http://localhost:4004/mysrvdemo/InsertEmployeeSrv
 Content-Type: application/json
 
 {
-
+        "ID":"918db7d8-05a7-11ed-b939-0242ac120002",
       "nameFirst": "juhi",
       "nameMiddle": "pallav",
       "nameLast": "jadav",
@@ -69,3 +69,29 @@ Content-Type: application/json
       "bankId": "26005885",
       "bankName": "My Bank of New York" 
 }
+
+###Update using UpdateEmployeeSrv
+PATCH http://localhost:4004/mysrvdemo/UpdateEmployeeSrv/918db7d8-05a7-11ed-b939-0242ac120002
+Content-Type: application/json
+
+{
+    "ID":"918db7d8-05a7-11ed-b939-0242ac120002",
+      "nameFirst": "Piyush",
+      "nameLast": "Jadav"
+}
+
+###Delete using DeleteEmployeeSrv
+DELETE http://localhost:4004/mysrvdemo/DeleteEmployeeSrv/918db7d8-05a7-11ed-b939-0242ac120002
+
+###GET The purchase order
+GET http://localhost:4004/CatlogService/POs?$top=5
+
+
+###Calling custom action for entity
+POST http://localhost:4004/CatlogService/POs('74867AD200E41EDBA5D8B0C98DC2A052')/CatalogService.boost
+Content-Type: application/json
+
+{}
+
+###Calling custom function to get largest order for entity
+GET http://localhost:4004/CatlogService/POs('74867AD200E41EDBA5D8B0C98DC2A052')/CatalogService.largestOrder()
